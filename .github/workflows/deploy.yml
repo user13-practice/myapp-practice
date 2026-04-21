@@ -17,6 +17,8 @@ jobs:
           host: telcation.f5.si
           username: appuser
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: false
+          command_timeout: 30s
           script: |
             sudo -u student01 git -C /home/student01/myapp fetch
             sudo -u student01 git -C /home/student01/myapp reset --hard origin/main
